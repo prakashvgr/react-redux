@@ -3,12 +3,12 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import App from './containers/App';
-import registerServiceWorker from './registerServiceWorker';
-import './index.css';
-import 'todomvc-app-css/index.css';
 import reducer from './reducers';
+import 'todomvc-app-css/index.css';
+import registerServiceWorker from './registerServiceWorker';
 
-const store = createStore(reducer);
+
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 render(
   <Provider store={store}>
